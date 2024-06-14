@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+    
+/* Encabezado de Pinterest */
+    
+.navegation{
+    display:flex;
+    align-items: center;
+    margin-left: 30px;
+    height: 120px;
+}
+    
+.navegation ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+    
+.navegation a{
+    color: #111;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+    
+.search{
+    width: 95%;
+    margin-left: 15px;
+    height: 55px;
+    background: #f1f1f1;
+    border-radius: 80px;
+    padding: 0 20px;
+}
+    
+.search input{
+    border: none;
+    background: transparent;
+    width: 80%;
+    height: 100%;
+    outline: none;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+    
+.icons a{
+    font-size: 26px;
+    margin: 0 15px;
+}
+    
+/* Carrusel Recomendaciones */
+    
+.main_recomendations{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+    
+.main_elements{
+    text-align: center;
+    flex: 1 0 auto;
+    margin: 20px 15px;
+    background-color: lavender;
+    width: 275px;
+    height: 100px;
+    border-radius: 15px;
+}
+    
+/* Contenedor de las imagenes en Pinterest */
+    
+:root{
+    --card_width: 250px;
+    --card_border_radius: 16px;
+    --row_increment: 10px;
+    --card_small: 26;
+    --card_medium: 33;
+    --card_large: 45;
+}
+    
+.pin_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+}
+    
+.card{
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+}
+    
+.card_small{
+    grid-row-end: span var(--card_small);
+    width: 230px;
+    height: 230px;
+}
+    
+.card_medium{
+    grid-row-end: span var(--card_medium);
+        width: 230px;
+        height: 300px;
+}
+    
+.card_large{
+    grid-row-end: span var(--card_large);
+    width: 230px;
+    height: 420px;
+}
+
+/* Tamaño de celular y tablet */
+
+@media (min-width:480px) and (max-width:768px){
+    :root{
+        --card_width: 15em;
+    }
+    
+    .navegation,.main_recomendations{
+        display: none !important;
+    }
+
+    .footer_nav {
+        background-color: white;
+        width: 100%;
+        height: 45px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .icons_footer ul{
+        display: flex;
+        align-items: center;
+        justify-content:space-around; 
+    }
+
+    .icons_footer a{
+        font-size: 26px;
+        margin: 0 15px;
+    }
+
+    .recomendation{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+    }
+    .elements{
+        text-align: center;
+        flex: 1 0 auto;
+        margin: 15px 15px 20px 20px;
+        background-color: transparent;
+    }
+}
+
+/* Tamaño de otros aparatos electronicos*/
+
+@media (min-width:769px) and (max-width:2000px){ 
+    .icons_footer, .recomendation{
+        display: none !important;
+    }
+} 
